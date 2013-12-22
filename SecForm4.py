@@ -41,7 +41,7 @@ def form_search( ):
 		# [File Type, HTML web address, TXT web address, File Date, File Time, File Number]
 		if file_type == "4":	
 
-			# Check to see if there is a filing number, if so, it is a reporting filing so keep going
+			# Check to see if there is a filing number, if so, it isth  a reporting filing so keep going
 			# If an issuer filing, go back to the top of for loop
 			try:
 
@@ -101,6 +101,6 @@ def execute_form_search():
 	except:
 			print "error"
 			
-# execute_form_search()
+execute_form_search()
 
 			

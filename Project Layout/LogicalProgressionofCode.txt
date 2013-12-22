@@ -1,0 +1,55 @@
+1) Returns the output of the text for current filings line by line
+
+	2a) If the form type is not a form 4 filing, then move on to the next form
+	
+	2b) If the form type is a form 4 filing, continue onwards
+	
+		3a) If the form 4 doesn't have an ID number, it is a company filed duplicate,
+			so move on to the next form
+		
+		3b) If the form 4 has an ID number, then it is a form of interest and move onwards
+			
+			4a) Begin extracting all relevant information about the current filing:
+				- Form type (only in case we move onto analyzing other forms like 10Q's or 10K's)
+				- Form html address (so that we can directly link to the page online)
+				- Form id number (in case anything gets lost)
+				- Form date and time (so that you can extract the stock price at the time it was filed)
+				- Buying information:
+					- Company name
+					- Filer name
+					- Filer position
+					- Filing type
+					- Total amount of shares bought/sold, transaction type
+					- Total amount of derivatives bought/sold, transaction type
+				- Current company information:
+					- Company industry
+					- Stock price
+					- Market cap
+					- P/E ratio
+				
+				Append this information to the database for future analysis
+			
+			4b) One to decide whether or not to notify the individual running the program of a this filing
+				based on a few settings set by the individual:
+				
+				For example, 
+				
+				Don't notify if:
+				- Financial service industry
+				- Market cap below 100M
+				- Stock price below 1.00 
+				- Average volume below 100,000 shares per day
+				- The insider purchase is not a direct purchase of a share
+				- Etc.
+			
+				5a) If the stock of the company still qualifies, continue analyzing the buy:
+					- Get how much insiders buy directly per year on average in the past 5 years
+					- Get how much insiders have sold directly per year on average in the past 5 years
+					- Pull up a graph of the past 5 years, 2 years, 1 year, 6mos, 3mos trend of the company
+			
+			
+				
+				
+				
+Work on GUI afterwards                                                                                                                     f1
+COMPLETED
